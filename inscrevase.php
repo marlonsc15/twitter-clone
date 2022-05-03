@@ -1,9 +1,16 @@
+<?php
+
+	$erro_usuario = isset($_GET['erro_usuario']) ? $_GET['erro_usuario'] : 0;
+	$erro_email   = isset($_GET['erro_email'])   ? $_GET['erro_email']   : 0;
+
+?>
+
 <!DOCTYPE HTML>
 <html lang="pt-br">
 	<head>
 		<meta charset="UTF-8">
 
-		<title>Twitter clone</title>
+		<title>Twitter clone</title>	
 		
 		<!-- jquery - link cdn -->
 		<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
@@ -48,10 +55,20 @@
 				<form method="post" action="registra_usuario.php" id="formCadastrarse">
 					<div class="form-group">
 						<input type="text" class="form-control" id="usuario" name="usuario" placeholder="Usuário" required="requiored">
+						<?php
+							if($erro_usuario){
+								echo '<font style="color:#FF0000"> usuario ja existe</font>';
+							}
+						?>
 					</div>
 
 					<div class="form-group">
 						<input type="email" class="form-control" id="email" name="email" placeholder="Email" required="requiored">
+						<?php
+							if($erro_email){
+								echo '<font style="color:#FF0000"> email ja existe</font>';
+							}
+						?>
 					</div>
 					
 					<div class="form-group">
