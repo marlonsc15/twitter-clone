@@ -33,7 +33,7 @@
 							data: $('#form_tweet').serialize(),
 							success: function(data){
 								$('#texto_tweet').val('');
-								alert('Tweet incluido com sucesso!');
+								atualizaTweet();
 							}
 						});
 
@@ -117,7 +117,7 @@
 			<div class="col-md-3">
 				<div class="panel panel-default">
 					<div class="panel-body">
-						<h4><a href="#">Procurar por pessoas</a></h4>
+						<h4><a href="procurar_pessoas.php">Procurar por pessoas</a></h4>
 					</div>
 				</div>
 			</div>
